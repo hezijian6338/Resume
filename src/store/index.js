@@ -9,7 +9,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state: {
         //
-        vPath: "http://localhost:8083/"
+        vPath: "http://localhost/"
     },
     mutations: {
         //
