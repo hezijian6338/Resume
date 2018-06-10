@@ -36,7 +36,7 @@
     data() {
       return {
         model: {
-          modelName: "resume-beta"
+          modelName: "resume-one"
         },
         isLoad: false,
         PDFsrc: ""
@@ -87,7 +87,7 @@
             const elink = document.createElement('a')
             // elink.download = "test.pdf"
             elink.style.display = 'none'
-            elink.href = "/pdfModel/studentPDF/160204107189-resume-beta-model.pdf"
+            elink.href = "/pdfModel/studentPDF/" + Cookies.get('user') + "-" + this.model.modelName + "-model.pdf"
             document.body.appendChild(elink)
             elink.click()
             // URL.revokeObjectURL(elink.href) // 释放URL 对象

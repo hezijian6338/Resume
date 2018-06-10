@@ -125,8 +125,15 @@ export default {
   beforeRouteLeave(to, from, next) {
     if (to.path == '/upload-photo/index') {
       this.handleSubmit('studentResume')
+      this.$Message.info('因为头像没有上传，离开当前页，前往上传头像页面~')
       next()
     }else if (to.path == '/step/index/two') {
+      next()
+    }else if (to.path == '/export/index') {
+      this.handleSubmit('studentResume')
+      this.$Message.info('因为头像上传完毕，离开当前页，前往PDF生成页面~')
+      next()
+    }else {
       next()
     }
   }

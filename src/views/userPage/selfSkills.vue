@@ -52,18 +52,15 @@
             // alert(localStorage.avatorImgPath)
             let apath = localStorage.avatorImgPath
             // alert(apath.indexOf("."))
-            // if (apath.indexOf(".") == -1) {
-            //   this.$router.push({
-            //     name: 'upload-photo_index'
-            //   })
-            // } else {
-            //   this.$router.push({
-            //     name: 'export_index'
-            //   })
-            // }
-            this.$router.push({
-              name: 'export_index'
-            })
+            if (apath.indexOf(".") == -1) {
+              this.$router.push({
+                name: 'upload-photo_index'
+              })
+            } else {
+              this.$router.push({
+                name: 'export_index'
+              })
+            }
             // this.$router.push('/mainFrame/self/export')
         }
       },

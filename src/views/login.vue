@@ -19,15 +19,15 @@
             <FormItem prop="userName">
               <Input v-model="form.userName" placeholder="请输入用户名">
               <span slot="prepend">
-                <Icon :size="16" type="person"></Icon>
-              </span>
+                        <Icon :size="16" type="person"></Icon>
+                      </span>
               </Input>
             </FormItem>
             <FormItem prop="userPassword">
               <Input type="password" v-model="form.userPassword" placeholder="请输入密码">
               <span slot="prepend">
-                  <Icon :size="14" type="locked"></Icon>
-                </span>
+                          <Icon :size="14" type="locked"></Icon>
+                        </span>
               </Input>
             </FormItem>
             <FormItem>
@@ -112,11 +112,21 @@
                     if (this.loginState) {
                       if (this.isAdmin) {
                         Cookies.set("access", "0,8");
-                      } else if(response.data.userType == 'company'){
+                      } else if (response.data.userType == 'company') {
                         Cookies.set("access", "2,3,4,5,6,7,8");
-                      }else{
+                      } else {
                         Cookies.set("access", "2,3,4,5,6,8,9");
                       }
+                      // if (response.data.photoPath == '' || response.data.photoPath == null) {
+                      //   this.$Message.info('头像是空的，必须先上传头像~')
+                      //   this.$router.push({
+                      //     name: 'upload-photo_index'
+                      //   })
+                      // } else {
+                      //   this.$router.push({
+                      //     name: "home_index"
+                      //   });
+                      // }
                       this.$router.push({
                         name: "home_index"
                       });
