@@ -132,7 +132,7 @@
       preview(file) {
         this.visible = true;
         //alert(file.response.photoPath + file.url + file.name);
-        this.photoPath = this.$store.state.vPath + "/pdfModel/studentPhoto/" + file.name;
+        this.photoPath = BASE_URL + "/pdfModel/studentPhoto/" + file.name;
       }
     },
     mounted() {

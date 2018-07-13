@@ -58,7 +58,7 @@
             this.$Notice.success({
               title: "成功生成电子个人简历(PDF版本)"
             });
-            var pdfURL = this.$store.state.vPath + response.data.pdfURL
+            var pdfURL = BASE_URL + response.data.pdfURL
             this.PDFsrc = pdfURL
             this.download(pdfURL)
           },

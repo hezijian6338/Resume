@@ -101,12 +101,12 @@
                     if (this.isAdmin) {
                       this.$store.commit(
                         "setAvator",
-                        this.$store.state.vPath + "/pdfModel/studentPhoto/" + Cookies.get("user") + ".png"
+                        BASE_URL + "/pdfModel/studentPhoto/" + Cookies.get("user") + ".png"
                       );
                     } else {
                       this.$store.commit(
                         "setAvator",
-                        this.$store.state.vPath + "/pdfModel/" + response.data.photoPath
+                        BASE_URL + "/pdfModel/" + response.data.photoPath
                       );
                     }
                     if (this.loginState) {

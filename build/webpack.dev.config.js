@@ -43,6 +43,9 @@ module.exports = merge(webpackBaseConfig, {
             ignore: [
                 'text-editor.vue'
             ]
+        }),
+        new webpack.DefinePlugin({
+            'BASE_URL': '"http://localhost:8082"'
         })
     ],
     //设置跨域代理
@@ -53,9 +56,11 @@ module.exports = merge(webpackBaseConfig, {
         port: 8080,
         proxy: {
             // 请求到 '/device' 下 的请求都会被代理到 target： http://debug.xxx.com 中
-            '/rest/*': { 
-                target: 'http://localhost/rest/',
-                pathRewrite: {'/rest/' : ''},
+            '/rest/*': {
+                target: 'http://localhost:8082/rest/',
+                pathRewrite: {
+                    '/rest/': ''
+                },
                 secure: false, // 接受 运行在 https 上的服务
                 changeOrigin: true
             }
